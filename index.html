@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="PowerGS: Display-Rendering Power Co-Optimization for Foveated Radiance-Field Rendering in Power-Constrained XR Systems">
+  <meta name="keywords" content="Gaussian Splatting, Gaussian">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PowerGS: Display-Rendering Power Co-Optimization for Foveated Radiance-Field Rendering in Power-Constrained XR Systems</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+  <script src="./static/js/switch.js"></script>
+
+</head>
+
+<body>
+
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered" >
+            <h1 class="title is-1 publication-title" style="font-size: 2.8rem;"><span
+              style="color: #04bd04 ;font-weight: bolder;">PowerGS: </span> Display-Rendering Power Co-Optimization for Foveated
+              Radiance-Field Rendering in Power-Constrained XR Systems </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">  
+                  <a href="https://linwk20.github.io/">Weikai Lin</a><sup>1</sup>, 
+                </span>
+                <span class="author-block">  
+                  <a href="">Sushant Kondguli</a><sup>2</sup>, 
+                </span>
+                <span class="author-block">  
+                  <a href="">Carl Marshall</a><sup>2</sup>, 
+                </span>
+                <span class="author-block">  
+                  <a href="https://yuhaozhu.com/">Yuhao Zhu</a><sup>1</sup>
+                </span>
+              </div>
+              
+              <br> 
+              <div class="subtitle is-size-5">
+                <sup>1</sup> University of Rochester &nbsp;
+                <sup>2</sup> Reality Labs Research, Meta
+                <br>
+                <br>
+                Siggraph Asia 2025
+              </div>
+
+            <div class="column has-text-centered">
+              <!-- <div class="publication-links"> -->
+                <!-- PDF Link. -->
+              <span class="link-block">
+                <!-- TODO: update paper and video link once upload -->
+                <a href="https://arxiv.org/abs/2509.21702" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Arxiv</span>
+                </a>
+              </span>
+  
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.20309"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=fxf_ypd7eD8" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/horizon-research/PowerGS"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Demo Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://huggingface.co/spaces/kairunwen/InstantSplat"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span>🤗 Demo</span>
+                  </a>
+                </span> -->
+              </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="has-text-centered">
+    <h2 class="title is-3" style="color: #000000;">📹 Teaser Video</h2>
+    <video controls style="width: 60%;">
+      <source src="static/videos/teaser.mp4" type="video/mp4">
+      Your browser does not support the video.
+    </video>
+  </div>
+
+  <br>
+  <h2 class="title is-3" style="text-align: center;">🎬 Video Comparisons</h2>
+
+  <div class="explanation">
+    <ul style="list-style-type: disc; padding-left: 5%;">
+      <li>We provide four scene traces used in our user study.</li> 
+      <li>Double-click any playing video to view it in full screen.</li>
+      <li>
+        Here we compare with five other methods, including dense 3DGS baselines:
+        <a href="https://arxiv.org/abs/2403.14166v3">MiniSplatting-D</a>,
+        <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">3DGS</a>,
+        efficient 3DGS (<a href="https://lightgaussian.github.io/">LightGS</a>), 
+        and foveated rendering (FR) methods:
+        <strong>FR-Render</strong>, which solely optimizes for rendering power and is <a href="https://arxiv.org/abs/2407.00435v2">RTGS</a>;
+        <strong>FR-Display</strong>, which solely optimizes for display power;
+        and <strong>PowerGS</strong>, which co-optimizes rendering and display power for the lowest total power.
+        For all FR methods, we fix the user's gaze at the center, as indicated by the red circle.
+      </li>
+      <li>
+        Total power is shown below each video as: total power = rendering power + display power.
+      </li>
+    </ul>
+  </div>
+  
+
+  <div class="controls">
+    <button id="prev" onclick="switchGroup(-1)">Switch Scene</button>
+    <button id="play" onclick="playAllVideos()"> Play All Videos</button>
+    <button id="next" onclick="switchGroup(1)">Switch Scene</button>
+  </div>
+
+  <div class="video-grid">
+    <div class="video-item">
+      <video controls muted loop playsinline>
+        <source src="./static/videos/bicycle_22_25_900_MiniSplatting-D_render_compressed.mp4" type="video/mp4">
+      </video>
+      <p class="video-label" id="label-left-top">Mini-D<br>(0.98 W = 0.71 W + 0.27 W)</p>
+    </div>
+    <div class="video-item">
+      <video controls muted loop playsinline>
+        <source src="./static/videos/bicycle_22_25_900_3DGS_render_compressed.mp4" type="video/mp4">
+      </video>
+      <p class="video-label" id="label-middle-top"> 3DGS<br>(0.91 W = 0.64 W + 0.27 W)</p>
+    </div>
+    <div class="video-item">
+      <video controls muted loop playsinline>
+        <source src="./static/videos/bicycle_22_25_900_LightGS-H_render_compressed.mp4" type="video/mp4">
+      </video>
+      <p class="video-label" id="label-right-top"> LightGS-H<br>(0.55 W = 0.28 W + 0.27 W)</p>
+    </div>
+    <div class="video-item">
+      <video controls muted loop playsinline>
+        <source src="./static/videos/bicycle_22_25_900_FR-Render-H_render_compressed.mp4" type="video/mp4">
+      </video>
+      <p class="video-label" id="label-left-bottom">FR-Render-H<br>(0.40 W = 0.14 W + 0.26 W)</p>
+    </div>
+    <div class="video-item">
+      <video controls muted loop playsinline>
+        <source src="./static/videos/bicycle_22_25_900_FR-Display-H_render_compressed.mp4" type="video/mp4">
+      </video>
+      <p class="video-label" id="label-middle-bottom">FR-Display-H<br>(0.92 W = 0.72 W + 0.20 W)</p>
+    </div>
+    <div class="video-item">
+      <video controls muted loop playsinline>
+        <source src="./static/videos/bicycle_22_25_900_PowerGS-H_render_compressed.mp4" type="video/mp4">
+      </video>
+      <p class="video-label" id="label-right-bottom">PowerGS-H<br>(0.32 W = 0.11 W + 0.21 W)</p>
+    </div>
+  </div>
+  
+
+  <br>
+
+  <section class="section is-tight">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">📊 Objective Evaluation</h2>
+          <div class="content has-text-justified" style="max-width: 85%; margin: 0 auto;">
+            <p>
+              We compare seven methods using standard metrics (PSNR, SSIM, LPIPS) across two datasets
+              (<a href="https://jonbarron.info/mipnerf360/">MiP-NeRF360</a> and <a href="https://www.matthewtancik.com/nerf">Synthetic NeRF</a>):
+              <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/"><strong>3DGS</strong></a>,
+              <a href="https://arxiv.org/abs/2403.14166v3"><strong>MiniSplatting-D</strong></a>,
+              <a href="https://arxiv.org/abs/2403.14166v3"><strong>MiniSplatting</strong></a>,
+              <a href="https://lightgaussian.github.io/"><strong>LightGS</strong></a>,
+              <strong>FR-Display-H</strong>,
+              <strong>FR-Render-H</strong> (<a href="https://arxiv.org/abs/2407.00435v2">RTGS</a>),
+              and <strong>PowerGS-H</strong>.
+            </p>
+            <p>
+              The first two are dense methods with high quality and power usage. The next two are pruned methods but use uniform rendering.
+              The last three apply foveated rendering (FR):
+              <strong>FR-Display-H</strong> adjusts color to reduce display power,
+              <strong>FR-Render-H</strong> prunes to reduce rendering power, and
+              <strong>PowerGS-H</strong> co-optimizes both for the lowest total power.
+            </p>
+            <p>
+              For FR methods, we report quality in the foveal region, as these standard metrics target foveal perception and HVS quality is already aligned across eccentricities.
+            </p>
+          </div>
+          <img src="./static/images/eval1.png" alt="Objective Evaluation Results" style="width: 100%; margin-top: 1rem;">
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+    </div>
+  </section>
+  
+  
+  
+
+  
+  <!-- <section class="section is-tight">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">👁️ Subjective Evaluation</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/eval2.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="section is-tight">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">📑 More Results</h2>
+
+          <div class="content has-text-justified" style="max-width: 85%; margin: 0 auto;">
+            <p>
+              We also provide scene-wise visualization results for               <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/"><strong>3DGS</strong></a>,
+              <a href="https://arxiv.org/abs/2403.14166v3"><strong>MiniSplatting-D</strong></a>,
+              <a href="https://arxiv.org/abs/2403.14166v3"><strong>MiniSplatting</strong></a>,
+              <a href="https://lightgaussian.github.io/"><strong>LightGS</strong></a>,
+              <strong>FR-Display-H</strong>,
+              <strong>FR-Render-H</strong> (<a href="https://arxiv.org/abs/2407.00435v2">RTGS</a>),
+              and <strong>PowerGS-H</strong>. 
+              We include results from 
+              <a href="https://jonbarron.info/mipnerf360/">MiP-NeRF360</a>, 
+              <a href="https://www.matthewtancik.com/nerf">Synthetic NeRF</a>, 
+              <a href="https://vladlen.info/publications/tanks-temples-benchmarking-large-scale-scene-reconstruction/">Tank and Temples</a>, and 
+              <a href="http://visual.cs.ucl.ac.uk/pubs/deepblending/">Deep Blending</a> — covering a total of 20 scenes. 
+              (The bicycle scene is shown in the main paper and thus omitted here.)
+            </p>
+            <p>
+              Each scene visualization includes both <strong>rendering</strong> and <strong>display</strong> power numbers (rendering, display), as well as zoom-ins of the <strong>foveal</strong> and <strong>peripheral</strong> regions.
+            </p>
+          </div>
+          
+
+          <div class="content has-text-justified">
+            <img src="./static/images/comparison_grid6.png">
+            <br>
+            <img src="./static/images/comparison_grid8.png">
+            <br>
+            <img src="./static/images/comparison_grid7.png">
+            <br>
+            <img src="./static/images/comparison_grid5.png">
+            <br>
+            <img src="./static/images/comparison_grid9.png">
+            <br>
+            <img src="./static/images/comparison_grid10.png">
+            <br>
+            <img src="./static/images/comparison_grid1.png">
+            <br>
+            <img src="./static/images/comparison_grid2.png">
+            <br>
+            <img src="./static/images/comparison_grid3.png">
+            <br>
+            <img src="./static/images/comparison_grid4.png">
+          </div>
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+    </div>
+  </section>
+  
+ 
+
+ 
+
+</html>
